@@ -1,0 +1,39 @@
+  <ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Datos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <form #formu="ngForm" (ngSubmit)="onSubmit()">
+
+    <ion-list-header>
+      <ion-label></ion-label>
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label position="stacked">User: </ion-label>
+      <ion-input type="text" placeholder="Nombre" name="user" minlength="3" [(ngModel)]="datos.user" pattern="[a-zA-Z ]*"
+        required>
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Email: </ion-label>
+      <ion-input type="email" placeholder="Correo Electronico" name="correo" value="" [(ngModel)]="datos.correo"
+      pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+        required>
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      
+    </ion-item>
+    <ion-button [disabled]="formu.invalid" expand="block" color="success" type="submit" fill="solid" routerLink="/cambiarpas">
+      Aceptar
+    </ion-button>
+
+  </form>
+</ion-content>

@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button>
+        <ion-icon slot="start" name="arrow-back-outline"></ion-icon>
+      </ion-back-button>
+    </ion-buttons>
+
+    <ion-icon   slot="primary" name="person-add-outline"></ion-icon>
+    <ion-title slot="start">RegistrAPP</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+  <icon-card>
+    <img src="assets/logo-duoc.png" class="ion-padding">
+  </icon-card>
+
+  <form [formGroup]="formularioLogin">
+
+
+
+    <ion-item>
+      <ion-label position="stacked">User: </ion-label>
+      <ion-input type="text" formControlName="nombre"  
+       >
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Password: </ion-label>
+      <ion-input type="password" formControlName="password"  >
+      </ion-input>
+    </ion-item>
+    <br>
+    <ion-button (click)="Ingreso()" expand="block" color="success"  fill="solid" >
+      Iniciar Sesión
+    </ion-button>
+ 
+      <ion-button (click)="onClick()" expand="block" fill="clear" shape="round" routerLink="/reestpas">
+        Olvidaste Tu Pass?
+      </ion-button>
+ 
+  </form>
+  <br><br><br>
+  
+  <ion-button  expand="block" fill="outline" shape="round" routerLink="/reg">
+    Registrarse
+  </ion-button>
+
+
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar >
+  </ion-toolbar>
+</ion-footer>
+
+
+

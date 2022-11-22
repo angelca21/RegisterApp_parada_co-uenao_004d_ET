@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()">
+        <ion-icon slot="start" name="menu-outline" ></ion-icon>
+       </ion-button>
+    </ion-buttons>
+    <ion-title>Articulos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12" size-lg="3" size-md="4" size-sm="6" size-xs="12"
+          *ngFor="let ap of api; let i=index">
+
+          <ion-card color="light">
+            <ion-card-header>
+                <ion-card-subtitle>
+                  <span class="text-primary">{{i + 1}}. </span>
+                  <span class="api-source-name">{{ap.source.name}} </span> 
+                </ion-card-subtitle>
+                <ion-card-title >{{ap.title}}</ion-card-title>
+            </ion-card-header>
+            <ion-img *ngIf="ap.urlToImage"
+                      [src] ="ap.urlToImage"></ion-img>
+            <ion-card-content>
+              <p>
+                {{ap.content}}
+              </p>
+            </ion-card-content>
+            <div class="ion-text-center">
+              <ion-text color="dark"><i>{{ap.author}}</i></ion-text>
+            </div>
+            
+          </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+</ion-content>
+<ion-footer >
+  <ion-footer >
+    <ion-toolbar>
+      <ion-buttons slot="end">
+        <ion-button (click)="cerrarsesion()" >
+          <ion-icon  slot="end" color="danger" name="log-out-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-footer>
+

@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons >
+      <ion-button (click)="mostrarMenu()" menu="second">
+        <ion-icon slot="start" name="menu-outline" ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title >Bienvenido {{nombre}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <ion-card>
+
+    <img src="assets/logo-duoc.png" class="ion-padding">
+  
+
+  <ion-item>
+     <img src="assets/sala.jpg" class="ion-padding"> 
+
+    </ion-item>
+  <ion-item>
+    <h6>aplicación dedicada para facilitar
+       la toma de asistencia, tanto al profesor 
+       como a lo alumnos</h6>
+  </ion-item>
+  <ion-item>
+    
+     <ion-icon slot="start" name="pencil-outline"></ion-icon>
+  </ion-item>
+
+  
+
+
+
+</ion-card>
+
+</ion-content>
+
+<ion-footer >
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="cerrarsesion()" >
+        <ion-icon  slot="end" color="danger" name="log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

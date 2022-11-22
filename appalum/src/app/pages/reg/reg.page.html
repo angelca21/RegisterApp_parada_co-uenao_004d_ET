@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-title>Registro</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+       
+
+        <ion-card-content>
+          <form [formGroup] = "formularioRegistro" (keyup.enter)="CrearUsuario()">
+
+            <ion-item>
+              <ion-label position="floating">Nombre:</ion-label>
+              <ion-input type="text" formControlName="nombre"></ion-input>
+              <div *ngIf="formularioRegistro.get('nombre').hasError('required') 
+              && formularioRegistro.get('nombre'),touched">Rellenar Campo</div>
+              <div *ngIf="formularioRegistro.get('nombre').hasError('minlength') 
+              && formularioRegistro.get('nombre'),touched">Pocos caracteres</div>
+              <div *ngIf="formularioRegistro.get('nombre').hasError('maxlength') 
+              && formularioRegistro.get('nombre'),touched">Muchos Caracteres</div>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="floating">Correo:</ion-label>
+              <ion-input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" formControlName="correo"></ion-input>
+              <div *ngIf="formularioRegistro.get('correo').hasError('required') 
+              && formularioRegistro.get('correo'),touched">Rellenar Campo</div>
+              <div *ngIf="formularioRegistro.get('correo').hasError('maxlength') 
+              && formularioRegistro.get('correo'),touched">Muchos Caracteres</div>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="floating">Password:</ion-label>
+              <ion-input type="password" formControlName="password"></ion-input>
+              <div class="ion-text-center" *ngIf="formularioRegistro.get('password').hasError('required') 
+              && formularioRegistro.get('password'),touched">Rellenar Campo</div>
+              <div *ngIf="formularioRegistro.get('password').hasError('minlength') 
+              && formularioRegistro.get('password'),touched">Pocos caracteres</div>
+              <div *ngIf="formularioRegistro.get('password').hasError('maxlength') 
+              && formularioRegistro.get('password'),touched">Password con Demasiados Caracteres</div>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="floating">Confirma Password:</ion-label>
+              <ion-input type="password" formControlName="confirmaPass"></ion-input>
+              <div *ngIf="formularioRegistro.get('confirmaPass').hasError('required') 
+              && formularioRegistro.get('confirmaPass'),touched">Rellenar Campo</div>
+            </ion-item>
+          </form>
+          <br>
+          <ion-button (click)="CrearUsuario()"  expand="block" fill="outline" shape="round">
+            Registrar
+          </ion-button>
+        </ion-card-content>
+    </ion-card>
+</ion-content>
+
+

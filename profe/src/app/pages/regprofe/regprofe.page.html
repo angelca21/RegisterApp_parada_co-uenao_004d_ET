@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-title>Registro</ion-title>
+
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+      
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+       
+
+        <ion-card-content>
+          <form [formGroup] = "formularioRegistroprofe" (keyup.enter)="CrearUsuarioprofe()">
+
+            <ion-item>
+              <ion-label position="floating">Nombre:</ion-label>
+              <ion-input type="text" formControlName="nombreprofe"></ion-input>
+              <div *ngIf="formularioRegistroprofe.get('nombreprofe').hasError('required') 
+              && formularioRegistroprofe.get('nombreprofe'),touched">Rellenar Campo</div>
+              <div *ngIf="formularioRegistroprofe.get('nombreprofe').hasError('minlength') 
+              && formularioRegistroprofe.get('nombreprofe'),touched">Pocos caracteres</div>
+              <div *ngIf="formularioRegistroprofe.get('nombreprofe').hasError('maxlength') 
+              && formularioRegistroprofe.get('nombreprofe'),touched">Muchos Caracteres</div>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="floating">Correo:</ion-label>
+              <ion-input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" formControlName="correoprofe"></ion-input>
+              <div *ngIf="formularioRegistroprofe.get('correoprofe').hasError('required') 
+              && formularioRegistroprofe.get('correoprofe'),touched">Rellenar Campo</div>
+              <div *ngIf="formularioRegistroprofe.get('correoprofe').hasError('maxlength') 
+              && formularioRegistroprofe.get('correoprofe'),touched">Muchos Caracteres</div>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="floating">Password:</ion-label>
+              <ion-input type="password" formControlName="passwordprofe"></ion-input>
+              <div class="ion-text-center" *ngIf="formularioRegistroprofe.get('passwordprofe').hasError('required') 
+              && formularioRegistroprofe.get('passwordprofe'),touched">Rellenar Campo</div>
+              <div *ngIf="formularioRegistroprofe.get('passwordprofe').hasError('minlength') 
+              && formularioRegistroprofe.get('passwordprofe'),touched">Pocos caracteres</div>
+              <div *ngIf="formularioRegistroprofe.get('passwordprofe').hasError('maxlength') 
+              && formularioRegistroprofe.get('passwordprofe'),touched">Password con Demasiados Caracteres</div>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="floating">Confirma Password:</ion-label>
+              <ion-input type="password" formControlName="confirmaPassprofe"></ion-input>
+              <div *ngIf="formularioRegistroprofe.get('confirmaPassprofe').hasError('required') 
+              && formularioRegistroprofe.get('confirmaPassprofe'),touched">Rellenar Campo</div>
+            </ion-item>
+          </form>
+          <br>
+          <ion-button (click)="CrearUsuarioprofe()"  expand="block" fill="outline" shape="round">
+            Registrar
+          </ion-button>
+        </ion-card-content>
+    </ion-card>
+</ion-content>
+
+

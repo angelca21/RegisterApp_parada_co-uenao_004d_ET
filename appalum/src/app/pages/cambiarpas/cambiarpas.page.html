@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>cambiar Password</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <form #formu="ngForm" (ngSubmit)="onSubmit()">
+
+    <ion-list-header>
+      <ion-label></ion-label>
+    </ion-list-header>
+    <ion-item>
+      <ion-label position="stacked">Password 1: </ion-label>
+      <ion-input type="password" placeholder="nueva Contraseña" minlength="4" name="password1" value="" [(ngModel)]="contra.password1"
+        required>
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Password 2: </ion-label>
+      <ion-input type="password" placeholder="repetir contraseña" minlength="4" name="password2" value="" [(ngModel)]="contra.password2"
+        required>
+      </ion-input>
+    </ion-item>
+    <ion-item>
+  
+    </ion-item>
+
+    <ion-button [disabled]="formu.invalid" expand="block" color="success" type="submit" fill="solid" routerLink="/inciarse">
+      Cambiar Contraseña
+    </ion-button>
+
+
+
+
+  </form>
+
+</ion-content>
