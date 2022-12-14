@@ -14,10 +14,16 @@
   <ion-card class="ion-text-center">
      <ion-card-content>
 
+        <ion-item>
+          <ion-label position="fixed">Modulo: </ion-label>
+          <ion-input type="text" [(ngModel)]="usuario.modulo" required></ion-input>
+        </ion-item>
+
        <ion-item>
          <ion-label position="fixed">Sección: </ion-label>
          <ion-input type="text" [(ngModel)]="usuario.seccion" required></ion-input>
        </ion-item>
+
        <ion-button 
            expand="block" 
            (click)="generaScan()">

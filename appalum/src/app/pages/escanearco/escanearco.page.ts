@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController, MenuController, NavController } from '@ionic/angular';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
 
 @Component({
   selector: 'app-escanearco',
@@ -8,12 +9,24 @@ import { AlertController, MenuController, NavController } from '@ionic/angular';
 })
 export class EscanearcoPage implements OnInit {
 
-  constructor(private menuController: MenuController,private navController:NavController,private alert:AlertController) { }
+  code: any;
+  nombre;
+
+  constructor(private menuController: MenuController,private navController:NavController,private alert:AlertController,private barcodescanner:BarcodeScanner) { }
 
   ngOnInit() {
+    this.nombre=localStorage.getItem('nombre');
   }
   mostrarMenu(){
     this.menuController.open('first');
+  }
+  scan(){
+    this.barcodescanner.scan().then(barcodeData => {
+      alert("barcode data="+barcodeData.text)
+      this.code=barcodeData.text;
+     }).catch(err => {
+         console.log('Error', err);
+     });
   }
   async cerrarsesion(){
     const alert = await this.alert.create({

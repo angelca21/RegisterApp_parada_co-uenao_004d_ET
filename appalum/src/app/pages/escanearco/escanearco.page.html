@@ -17,13 +17,14 @@
 
     <img src="assets/celu-qr.jpg" class="ion-padding">
     <ion-item>
-      <ion-button (click)="onClick()" expand="full" fill="outline" shape="round" routerLink="/asistiempo">
-        Escanear
+      <ion-button (click)="scan()" >
+        escanear
       </ion-button>
     </ion-item>
   </ion-card>
 
 </ion-content>
+<ion-button [routerLink]="['/agregardatos']">agregar</ion-button>
 <ion-footer >
   <ion-toolbar>
     <ion-buttons slot="end">

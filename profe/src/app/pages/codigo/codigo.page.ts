@@ -26,10 +26,11 @@ export class CodigoPage  {
 
   usuario={
     seccion:'',
+    modulo:'',
   }
 
   generaScan(){
-    this.qrCodeString= this.usuario.seccion+'-'+this.hora+'-'+this.fecha
+    this.qrCodeString= this.usuario.modulo+'-'+this.usuario.seccion+'-'+this.hora+'-'+this.fecha
   }
 
   verScan(){

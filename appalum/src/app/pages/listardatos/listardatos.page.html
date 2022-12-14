@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Listar Datos</ion-title>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/escanearco']">
+         Agregar
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let a of Datos">
+      <ion-label>{{a.nombre}} </ion-label>
+      <ion-label>{{a.datosasis}}</ion-label>
+      </ion-item>
+  </ion-list>
+
+</ion-content>

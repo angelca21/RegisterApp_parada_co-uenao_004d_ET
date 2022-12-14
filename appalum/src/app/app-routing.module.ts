@@ -64,6 +64,14 @@ const routes: Routes = [
     loadChildren: () => import('./pages/reg/reg.module').then( m => m.RegPageModule),
     canActivate:[NoIngresadoGuard]
   },
+  {
+    path: 'listardatos',
+    loadChildren: () => import('./pages/listardatos/listardatos.module').then( m => m.ListardatosPageModule)
+  },
+  {
+    path: 'agregardatos',
+    loadChildren: () => import('./pages/agregardatos/agregardatos.module').then( m => m.AgregardatosPageModule)
+  },
   
 
 ];
